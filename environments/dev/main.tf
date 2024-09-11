@@ -17,5 +17,5 @@ resource "aws_s3_bucket" "annysahbucket" {
 }
 
 resource "aws_s3_bucket" "testbucket" {
-  bucket = "annysah-terraform-test"
+  bucket = "annysah-terraform-test1"
 }
