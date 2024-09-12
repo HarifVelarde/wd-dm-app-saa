@@ -23,7 +23,7 @@ resource "aws_s3_bucket_policy" "wd-bucket-storage-back" {
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::data-management-flash/*",
+      "Resource": "arn:aws:s3:::data-management-flash/*"
     }
   ]
 }
