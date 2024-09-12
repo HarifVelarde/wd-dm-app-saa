@@ -22,11 +22,8 @@ resource "aws_s3_bucket_policy" "wd-bucket-storage-back" {
       "Sid": "AllowPublicRead",
       "Effect": "Allow",
       "Principal": "*",
-      "Action": "s3:*",
+      "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::data-management-flash/*",
-      "Condition": {
-         "IpAddress": {"aws:SourceIp": "8.8.8.8/32"}
-      }
     }
   ]
 }
