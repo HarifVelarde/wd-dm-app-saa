@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket="backend-bucket-tf-wd"
+    bucket="backend-bucket-tf-wds"
     key="tf-state"
     region="us-west-1"
   }
