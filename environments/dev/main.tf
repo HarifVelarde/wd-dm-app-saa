@@ -1,7 +1,34 @@
-resource "aws_s3_bucket" "wd-bucket-back-2" {
-  bucket = "data-management-wd"
+resource "aws_s3_bucket" "wd-bucket-storage" {
+  bucket = "data-management-flash"
 }
 
-resource "aws_s3_bucket" "wd-bucket-back-3" {
-  bucket = "data-management-flash"
+resource "aws_s3_bucket_public_access_block" "wd-bucket-storage" {
+  bucket = aws_s3_bucket.wd-bucket-storage.id
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_policy" "wd-bucket-storage" {
+  bucket = aws_s3_bucket.wd-bucket-storage.id
+
+  policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Id": "WDBUCKETPOLICY",
+  "Statement": [
+    {
+      "Sid": "AllowPublicRead",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::data-management-flash/*",
+      "Condition": {
+         "IpAddress": {"aws:SourceIp": "8.8.8.8/32"}
+      }
+    }
+  ]
+}
+POLICY
 }
