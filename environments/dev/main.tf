@@ -1,21 +1,7 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
+resource "aws_s3_bucket" "wd-bucket-back-2" {
+  bucket = "data-management-wd"
 }
 
-provider "aws" {
-  # Configuration options
-  region = "us-west-1"
-}
-
-resource "aws_s3_bucket" "annysahbucket" {
-  bucket = "annysah-terraform-practice"
-}
-
-resource "aws_s3_bucket" "testbucket" {
-  bucket = "annysah-terraform-test1"
+resource "aws_s3_bucket" "wd-bucket-back-3" {
+  bucket = "data-management-flash"
 }
