@@ -1,17 +1,17 @@
-resource "aws_s3_bucket" "wd-bucket-storage" {
+resource "aws_s3_bucket" "wd-bucket-storage-back" {
   bucket = "data-management-flash"
 }
 
-resource "aws_s3_bucket_public_access_block" "wd-bucket-storage" {
-  bucket = aws_s3_bucket.wd-bucket-storage.id
+resource "aws_s3_bucket_public_access_block" "wd-bucket-storage-back" {
+  bucket = aws_s3_bucket.wd-bucket-storage-back.id
   block_public_acls       = false
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_policy" "wd-bucket-storage" {
-  bucket = aws_s3_bucket.wd-bucket-storage.id
+resource "aws_s3_bucket_policy" "wd-bucket-storage-back" {
+  bucket = aws_s3_bucket.wd-bucket-storage-back.id
 
   policy = <<POLICY
 {
