@@ -1,6 +1,6 @@
 # Terraform AWS Infrastructure Project
 
-This repository contains a Terraform project used to manage AWS resources. The project aims to provide a scalable, efficient, and automated way to manage AWS infrastructure, including VPCs, EC2 instances, RDS databases, S3 buckets, and more.
+This repository contains a Terraform project used to manage AWS resources. The project aims to provide a scalable, efficient, and automated way to manage AWS infrastructure, including EC2 instances, S3 buckets, and more.
 
 ## Table of Contents
 
